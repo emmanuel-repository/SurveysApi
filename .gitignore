@@ -1,0 +1,67 @@
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+*.log
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Visual Studio Code
+.vscode/
+.history/
+
+## Rider
+.idea/
+*.sln.iml
+
+## DotCover
+*.dotCover
+
+## ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+## Configuration
+appsettings.*.json
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Entity Framework Migrations (optional)
+# Migrations/
+
+## Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+## Dotnet tools
+.tool/
+
+## MacOS
+.DS_Store
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## Linux
+*~
+
+## Logs
+*.log
+
+## Others
+.env
+secrets.json
