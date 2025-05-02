@@ -48,7 +48,7 @@ public class SurveyController : ControllerBase
 
     [Authorize]
     [HttpPost]
-    public async Task<IActionResult> CreateSurvey([FromBody] Survey survey)
+    public async Task<IActionResult> CreateSurvey(Survey survey)
     {
         try
         {
@@ -76,7 +76,6 @@ public class SurveyController : ControllerBase
 
             existingSurvey.name = updatedSurvey.name;
             existingSurvey.description = updatedSurvey.description;
-            existingSurvey.date_register = updatedSurvey.date_register;
 
             await _context.SaveChangesAsync();
             return Ok(new
