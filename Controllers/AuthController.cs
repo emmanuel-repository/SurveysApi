@@ -91,7 +91,8 @@ public class AuthController : ControllerBase
         var claims = new[]
         {
             new Claim(ClaimTypes.Name, user.user_name),
-            new Claim("UserId", user.id.ToString())
+            new Claim("UserId", user.id.ToString()),
+            new Claim("RoleUser", user.user_rol),
             // Puedes agregar más claims aquí
         };
     

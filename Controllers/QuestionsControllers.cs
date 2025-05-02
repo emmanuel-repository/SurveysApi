@@ -92,6 +92,7 @@ public class QuestionController : ControllerBase
             if (id != updatedQuestion.id) return BadRequest("ID del cuerpo no coincide con el de la URL");
 
             var existingQuestion = await _context.Questions.FindAsync(id);
+           
             if (existingQuestion == null) return NotFound();
 
             existingQuestion.ask = updatedQuestion.ask;
