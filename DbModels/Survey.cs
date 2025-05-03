@@ -13,5 +13,7 @@ public partial class Survey
 
     public string date_register { get; set; } = null!;
 
+    public virtual ICollection<Answered> Answereds { get; set; } = new List<Answered>();
+
     public virtual ICollection<Question> Questions { get; set; } = new List<Question>();
 }

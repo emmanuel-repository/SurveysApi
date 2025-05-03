@@ -93,6 +93,7 @@ public class AuthController : ControllerBase
             new Claim(ClaimTypes.Name, user.user_name),
             new Claim("UserId", user.id.ToString()),
             new Claim("RoleUser", user.user_rol),
+            new Claim("UserName", user.name),
             // Puedes agregar más claims aquí
         };
     

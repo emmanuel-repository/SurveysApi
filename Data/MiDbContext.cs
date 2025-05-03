@@ -24,22 +24,19 @@ public partial class MiDbContext : DbContext
     {
         modelBuilder.Entity<Answered>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("Answered");
+            entity.HasKey(e => e.id).HasName("answered_pk");
 
+            entity.ToTable("Answered");
+
+            entity.Property(e => e.id).UseIdentityAlwaysColumn();
             entity.Property(e => e.date_end).HasMaxLength(40);
             entity.Property(e => e.date_start).HasMaxLength(40);
-            entity.Property(e => e.id)
-                .ValueGeneratedOnAdd()
-                .UseIdentityAlwaysColumn();
 
-            entity.HasOne(d => d.survey).WithMany()
+            entity.HasOne(d => d.survey).WithMany(p => p.Answereds)
                 .HasForeignKey(d => d.survey_id)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("surveyanswered_surveys_id_fk");
 
-            entity.HasOne(d => d.user).WithMany()
+            entity.HasOne(d => d.user).WithMany(p => p.Answereds)
                 .HasForeignKey(d => d.user_id)
                 .HasConstraintName("surveyanswered_users_id_fk");
         });

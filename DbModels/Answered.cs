@@ -13,11 +13,11 @@ public partial class Answered
 
     public string? date_end { get; set; }
 
-    public int survey_id { get; set; }
+    public int? survey_id { get; set; }
 
     public int? user_id { get; set; }
 
-    public virtual Survey survey { get; set; } = null!;
+    public virtual Survey? survey { get; set; }
 
     public virtual User? user { get; set; }
 }

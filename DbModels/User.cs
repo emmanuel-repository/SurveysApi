@@ -16,4 +16,6 @@ public partial class User
     public string user_name { get; set; } = null!;
 
     public string password { get; set; } = null!;
+
+    public virtual ICollection<Answered> Answereds { get; set; } = new List<Answered>();
 }
