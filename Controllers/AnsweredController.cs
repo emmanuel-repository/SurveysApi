@@ -41,7 +41,7 @@ public class AnsweredController : ControllerBase
 
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetAnsweredById), new { id = answered.id }, answered);
+            return Ok(new { message = "Encuesta respondida exitosamente", answered });
         }
         catch (Exception e)
         {
